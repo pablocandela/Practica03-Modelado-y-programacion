@@ -74,11 +74,14 @@ class Ui_Ventana(object):
         self.pBt_coma = QtGui.QPushButton(Ventana)
         self.pBt_coma.setGeometry(QtCore.QRect(160, 210, 61, 41))
         self.pBt_coma.setObjectName(_fromUtf8("pBt_coma"))
+        self.pBt_punto = QtGui.QPushButton(Ventana)
+        self.pBt_punto.setGeometry(QtCore.QRect(280, 60, 122, 41))
+        self.pBt_punto.setObjectName(_fromUtf8("pBt_punto"))
         self.pBt_0 = QtGui.QPushButton(Ventana)
         self.pBt_0.setGeometry(QtCore.QRect(100, 210, 61, 41))
         self.pBt_0.setObjectName(_fromUtf8("pBt_0"))
         self.pBt_igual = QtGui.QPushButton(Ventana)
-        self.pBt_igual.setGeometry(QtCore.QRect(280, 60, 121, 41))
+        self.pBt_igual.setGeometry(QtCore.QRect(280, 60, 61, 41))
         self.pBt_igual.setObjectName(_fromUtf8("pBt_igual"))
         self.pBt_limpiar = QtGui.QPushButton(Ventana)
         self.pBt_limpiar.setGeometry(QtCore.QRect(340, 110, 61, 41))
@@ -105,6 +108,7 @@ class Ui_Ventana(object):
         QtCore.QObject.connect(self.pBt_mas, QtCore.SIGNAL(_fromUtf8("pressed()")), self.agregarSuma)
         QtCore.QObject.connect(self.pBt_menos, QtCore.SIGNAL(_fromUtf8("pressed()")), self.agregarResta)
         QtCore.QObject.connect(self.pBt_coma, QtCore.SIGNAL(_fromUtf8("pressed()")), self.agregarComa)
+        QtCore.QObject.connect(self.pBt_punto, QtCore.SIGNAL(_fromUtf8("pressed()")), self.agregarPunto)
         QtCore.QObject.connect(self.pBt_igual, QtCore.SIGNAL(_fromUtf8("pressed()")), self.EvaluarFuncion)
         QtCore.QObject.connect(self.pBt_limpiar, QtCore.SIGNAL(_fromUtf8("pressed()")), self.py_lineEdit_resultado.clear)
         QtCore.QMetaObject.connectSlotsByName(Ventana)
@@ -126,6 +130,7 @@ class Ui_Ventana(object):
         self.pBt_porc.setText(_translate("Ventana", "%", None))
         self.pBt_mas.setText(_translate("Ventana", "+", None))
         self.pBt_coma.setText(_translate("Ventana", ",", None))
+        self.pBt_punto.setText(_translate("Ventana", ".", None))
         self.pBt_0.setText(_translate("Ventana", "0", None))
         self.pBt_igual.setText(_translate("Ventana", "=", None))
         self.pBt_limpiar.setText(_translate("Ventana", "C", None))
@@ -162,6 +167,8 @@ class Ui_Ventana(object):
         self.py_lineEdit_resultado.setText(self.py_lineEdit_resultado.text() + "-")
     def agregarComa(self):
         self.py_lineEdit_resultado.setText(self.py_lineEdit_resultado.text() + ",")
+    def agregarPunto(self):
+        self.py_lineEdit_resultado.setText(self.py_lineEdit_resultado.text() + ".")   
     # funcion para evaluar las expresiones aritmeticas
     def EvaluarFuncion(self):
         try:
