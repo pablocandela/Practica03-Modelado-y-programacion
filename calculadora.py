@@ -109,6 +109,7 @@ class Ui_Ventana(object):
         QtCore.QObject.connect(self.pBt_menos, QtCore.SIGNAL(_fromUtf8("pressed()")), self.agregarResta)
         QtCore.QObject.connect(self.pBt_coma, QtCore.SIGNAL(_fromUtf8("pressed()")), self.agregarComa)
         QtCore.QObject.connect(self.pBt_punto, QtCore.SIGNAL(_fromUtf8("pressed()")), self.agregarPunto)
+        QtCore.QObject.connect(self.pBt_cuad, QtCore.SIGNAL(_fromUtf8("pressed()")), self.agregarCuadrado)
         QtCore.QObject.connect(self.pBt_igual, QtCore.SIGNAL(_fromUtf8("pressed()")), self.EvaluarFuncion)
         QtCore.QObject.connect(self.pBt_limpiar, QtCore.SIGNAL(_fromUtf8("pressed()")), self.py_lineEdit_resultado.clear)
         QtCore.QMetaObject.connectSlotsByName(Ventana)
@@ -134,7 +135,7 @@ class Ui_Ventana(object):
         self.pBt_0.setText(_translate("Ventana", "0", None))
         self.pBt_igual.setText(_translate("Ventana", "=", None))
         self.pBt_limpiar.setText(_translate("Ventana", "C", None))
-        self.pBt_cuad.setText(_translate("Ventana", "X2", None))
+        self.pBt_cuad.setText(_translate("Ventana", "elevado", None))
 
     #funciones para agregar numeros al evaluador
     def agregar9(self):
@@ -168,7 +169,9 @@ class Ui_Ventana(object):
     def agregarComa(self):
         self.py_lineEdit_resultado.setText(self.py_lineEdit_resultado.text() + ",")
     def agregarPunto(self):
-        self.py_lineEdit_resultado.setText(self.py_lineEdit_resultado.text() + ".")   
+        self.py_lineEdit_resultado.setText(self.py_lineEdit_resultado.text() + ".")
+    def agregarCuadrado(self):
+        self.py_lineEdit_resultado.setText(self.py_lineEdit_resultado.text() + "**")      
     # funcion para evaluar las expresiones aritmeticas
     def EvaluarFuncion(self):
         try:
